@@ -3,6 +3,12 @@ var volume;
 
 function getVid(){
 	video = document.querySelector("#myVideo");
+	var button = document.querySelector(".play");
+	var img = '<img src="images/play.jpg" width=20 height=20 alt="play icon" />';
+	button.innerHTML = img + "Play Video";
+	var button = document.querySelector(".pause");
+	var img = '<img src="images/pause.png" width=20 height=20 alt="pause icon"/>';
+	button.innerHTML = img + "Pause Video";
 }
 
 function playVid() {
@@ -12,9 +18,6 @@ function playVid() {
 	volume = document.querySelector("#volume")
 	console.log(volume);
 	volume.innerHTML = (video.volume * 100) + "%";
-	var button = document.querySelector(".play");
-	var img = '<img src="images/play.jpg" width=20 height=20 alt="play icon" />';
-	button.innerHTML = img + "Play Video";
 }
 
 // play icon citation: https://www.vecteezy.com/vector-art/423436-play-icon-vector-illustration
@@ -22,9 +25,6 @@ function playVid() {
 function pauseVid() {
 	video.pause();
 	console.log("Pause Video");
-	var button = document.querySelector(".pause");
-	var img = '<img src="images/pause.png" width=20 height=20 alt="pause icon"/>';
-	button.innerHTML = img + "Pause Video";
 }
 
 // pause icon citation: https://www.visualpharm.com/free-icons/pause%20button-595b40b75ba036ed117d590c
