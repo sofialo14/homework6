@@ -30,20 +30,22 @@ function pauseVid() {
 // pause icon citation: https://www.visualpharm.com/free-icons/pause%20button-595b40b75ba036ed117d590c
 
 function decreaseSpeed() {
-	video.playbackRate -= .2
+	video.playbackRate *= .8;
 	console.log("Speed is " + video.playbackRate);
 }
 
 function increaseSpeed() {
-	video.playbackRate += .25
+	video.playbackRate *= 1.25;
 	console.log("Speed is " + video.playbackRate);
 }
 
 function skipAhead() {
 	video.currentTime += 60;
 	console.log("Current location is " + video.currentTime);
+	console.log(video.ended);
 	if (video.ended) {
-		video.load();
+		video.currentTime = 0;
+		video.play();
 		video.playbackRate = 1;
 		console.log("Current location is " + video.currentTime);
 	}
@@ -74,11 +76,11 @@ function changeVolume() {
 }
 
 function gray() {
-	video.style.filter = "grayscale(100%)";
+	video.classList.add("grayscale")
 	console.log("In grayscale")
 }
 
 function color() {
-	video.style = "initial";
+	video.classList.remove("grayscale")
 	console.log("In color")
 }
